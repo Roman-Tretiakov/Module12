@@ -19,20 +19,23 @@ class TournamentTest(unittest.TestCase):
     def test_tournament_1(self):
         _tournament = rt.Tournament(90, self.runner_1, self.runner_3)
         self.all_results.append(_tournament.start())
+        index = len(self.all_results[-1])
 
-        self.assertTrue(self.all_results[-1][2], self.runner_3.name)
+        self.assertTrue(self.all_results[-1][index] == self.runner_3.name)
 
     def test_tournament_2(self):
         _tournament = rt.Tournament(90, self.runner_2, self.runner_3)
         self.all_results.append(_tournament.start())
+        index = len(self.all_results[-1])
 
-        self.assertTrue(self.all_results[-1][2], self.runner_3.name)
+        self.assertTrue(self.all_results[-1][index] == self.runner_3.name)
 
     def test_tournament_3(self):
         _tournament = rt.Tournament(90, self.runner_1, self.runner_2, self.runner_3)
         self.all_results.append(_tournament.start())
+        index = len(self.all_results[-1])
 
-        self.assertTrue(self.all_results[-1][3], self.runner_3.name)
+        self.assertTrue(self.all_results[-1][index] == self.runner_3.name)
 
     # Дополнительный тест на правильное расположение бегунов в забегах:
     def test_tournaments(self):
